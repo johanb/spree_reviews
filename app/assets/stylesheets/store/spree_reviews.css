@@ -78,11 +78,11 @@ div.rating-cancel a, div.star-rating a {
 }
 
 div.star-rating-on, div.star-rating-on a {
-  background-position: 0 -30px !important
+  background-position: 0 -30px;
 }
 
 div.star-rating-hover, div.star-rating-hover a {
-  background-position: 0 -30px !important;
+  background-position: 0 -16px;
 }
 
 /* Read Only CSS */
