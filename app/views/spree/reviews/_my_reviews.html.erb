@@ -1,0 +1,25 @@
+<h3><%= t(:my_reviews) %></h3>
+<% if @reviews.present? %>
+    <table class="review-summary">
+      <thead>
+        <tr>
+          <th><%= t(:rating) %></th>
+          <th><%= t(:title) %></th>
+          <th><%= t(:product) %></th>
+          <th><%= t(:created_at) %></th>
+          </tr>
+      </thead>
+      <tbody>
+      <% @reviews.each do |review| %>
+        <tr class="<%= cycle('even', 'odd') %>">
+          <td><%= review.rating %></td>
+          <td><%= review.title %></td>
+          <td><%= link_to review.product.name, spree.product_path(review.product) %></td>
+          <td><%= review.created_at %></td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+  <% else %>
+    <p><%= t(:you_have_no_reviews_yet) %></p>
+  <% end %>
