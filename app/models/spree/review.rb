@@ -7,6 +7,7 @@ class Spree::Review < ActiveRecord::Base
 
   validates_presence_of     :name, :review
   validates_numericality_of :rating, :only_integer => true
+  validates_uniqueness_of :product_id, scope: :user_id, message: "has already been reviewed by you"
 
   default_scope order("spree_reviews.created_at DESC")
 
