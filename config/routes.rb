@@ -11,7 +11,7 @@ Spree::Core::Engine.routes.append do
   end
 
   resources :products do
-    resources :reviews do
+    resources :reviews, except: [:show, :edit, :update] do
       collection do
         get :terms
         get "submissionguidelines"
